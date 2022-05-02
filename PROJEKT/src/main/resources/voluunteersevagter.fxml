@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ControllereditVOUL">
+    <AnchorPane prefHeight="382.0" prefWidth="500.0">
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe6900" height="385.0" layoutX="-1.0" layoutY="-2.0" stroke="#e5eaee" strokeType="INSIDE" width="101.0" />
+         <Button alignment="CENTER" layoutX="-6.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#Logout" prefHeight="32.0" prefWidth="105.0" style="-fx-background-color: #fe6900#fe6900;" text="log out" textFill="WHITE">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+          <ImageView fitHeight="60.0" fitWidth="91.0" layoutX="4.0" layoutY="27.0" pickOnBounds="true">
+              <image>
+                  <Image url="@orange.png" />
+              </image>
+          </ImageView>
+          <Text fill="WHITE" layoutX="23.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU">
+              <font>
+                  <Font name="Cambay Devanagari Regular" size="25.0" />
+              </font>
+          </Text>
+         <ImageView fitHeight="17.0" fitWidth="22.0" layoutX="72.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@out.png" />
+            </image>
+         </ImageView>
+         <TableView fx:id="Tableviewuse" disable="true" layoutX="122.0" layoutY="65.0" prefHeight="291.0" prefWidth="350.0">
+           <columns>
+             <TableColumn fx:id="Datebox" prefWidth="107.20764923095703" text="Date" />
+             <TableColumn fx:id="StandBox" prefWidth="108.7923583984375" text="Stand / Task" />
+               <TableColumn fx:id="ShiftBox" prefWidth="132.5" text="Shift length" />
+           </columns>
+         </TableView>
+         <Button layoutX="380.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#ShowShifts" prefHeight="26.0" prefWidth="92.0" text="Done" />
+         <Label fx:id="shiftsof" accessibleRole="BUTTON" layoutX="123.0" layoutY="38.0" prefHeight="20.0" prefWidth="159.0">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="14.0" />
+            </font>
+         </Label>
+         <TextField fx:id="emailsevagter" layoutX="122.0" layoutY="13.0" prefHeight="26.0" prefWidth="249.0" promptText="Enter your email" />
+      </children>
+   </AnchorPane>
+</Scene>

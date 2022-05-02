@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <AnchorPane prefHeight="382.0" prefWidth="500.0">
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe6900" height="385.0" layoutX="-1.0" layoutY="-2.0" stroke="#e5eaee" strokeType="INSIDE" width="127.0" />
+         <Button alignment="CENTER" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#Logout" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="log out" textFill="WHITE">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+         </Button>
+         <Text fill="WHITE" layoutX="35.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="25.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="86.0" fitWidth="125.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@orange.png" />
+            </image>
+         </ImageView>
+         <MenuButton alignment="CENTER" layoutX="1.0" layoutY="43.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="VOLUNTTER" textAlignment="CENTER" textFill="WHITE">
+           <items>
+             <MenuItem mnemonicParsing="false" onAction="#createvolunteer" text="Create" />
+             <MenuItem mnemonicParsing="false" text="Edit" />
+           </items>
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </MenuButton>
+         <ImageView fitHeight="17.0" fitWidth="22.0" layoutX="90.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@out.png" />
+            </image>
+         </ImageView>
+         <TextField fx:id="Searchname" layoutX="174.0" layoutY="45.0" prefHeight="33.0" prefWidth="286.0" promptText="Name" />
+         <Label fx:id="editvollunteerlabel" layoutX="174.0" layoutY="15.0" prefHeight="22.0" prefWidth="310.0" text="Edit Voluntter">
+            <font>
+               <Font size="17.0" />
+            </font>
+         </Label>
+         <TextField fx:id="Address" layoutX="174.0" layoutY="161.0" prefHeight="33.0" prefWidth="135.0" promptText="Address" />
+         <TextField fx:id="Nationality" layoutX="174.0" layoutY="202.0" prefHeight="33.0" prefWidth="135.0" promptText="Nationality" />
+         <TextField fx:id="Email" layoutX="174.0" layoutY="243.0" prefHeight="33.0" prefWidth="135.0" promptText="Email" />
+         <Button alignment="CENTER" layoutX="174.0" layoutY="288.0" mnemonicParsing="false" onMouseClicked="#Done" prefHeight="29.0" prefWidth="286.0" text="Save">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="15.0" />
+            </font>
+         </Button>
+         <MenuButton alignment="CENTER" layoutX="1.0" layoutY="75.0" mnemonicParsing="false" prefHeight="30.0" popupSide="RIGHT" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="SHIFTS" textAlignment="CENTER" textFill="WHITE">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#createshift" text="Create" />
+               <MenuItem mnemonicParsing="false" onAction="#editshift" text="Edit" />
+            </items>
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </MenuButton>
+         <TextField fx:id="Name" layoutX="174.0" layoutY="121.0" prefHeight="33.0" prefWidth="135.0" promptText="Name" />
+         <ImageView accessibleRole="BUTTON" fitHeight="29.0" fitWidth="30.0" layoutX="464.0" layoutY="48.0" onMouseClicked="#searchnowbutton" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@search.jpeg" />
+            </image>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </ImageView>
+         <Button alignment="CENTER" layoutX="174.0" layoutY="326.0" mnemonicParsing="false" onMouseClicked="#DELETE" prefHeight="29.0" prefWidth="286.0" text="Delete voluntter" textFill="#f50000">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="15.0" />
+            </font>
+         </Button>
+         <Label fx:id="Createavolunteer" layoutX="174.0" layoutY="95.0" prefHeight="21.0" prefWidth="286.0" text="Enter new infomation">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Separator layoutX="318.0" layoutY="115.0" orientation="VERTICAL" prefHeight="162.0" prefWidth="6.0" />
+         <Label fx:id="oldname" layoutX="327.0" layoutY="127.0" prefHeight="21.0" prefWidth="162.0">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label fx:id="oldadress" layoutX="327.0" layoutY="167.0" prefHeight="21.0" prefWidth="162.0">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label fx:id="oldnationality" layoutX="327.0" layoutY="208.0" prefHeight="21.0" prefWidth="162.0">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label fx:id="oldemail" layoutX="327.0" layoutY="249.0" prefHeight="21.0" prefWidth="162.0">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+      </children>
+   </AnchorPane>
+</Scene>
