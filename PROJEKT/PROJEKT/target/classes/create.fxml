@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <AnchorPane prefHeight="382.0" prefWidth="500.0">
+      <children>
+         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fe6900" height="385.0" layoutX="-1.0" layoutY="-2.0" stroke="#e5eaee" strokeType="INSIDE" width="127.0" />
+         <Button alignment="CENTER" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#Logout" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #fe6900#fe6900;" text="log out" textFill="WHITE">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Text fill="WHITE" layoutX="35.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="25.0" />
+            </font>
+         </Text>
+         <ImageView fitHeight="86.0" fitWidth="125.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@orange.png" />
+            </image>
+         </ImageView>
+         <MenuButton alignment="CENTER" layoutX="1.0" layoutY="43.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="VOLUNTEER" textAlignment="CENTER" textFill="WHITE">
+           <items>
+             <MenuItem mnemonicParsing="false" text="Create" />
+             <MenuItem mnemonicParsing="false" onAction="#editvolunteer" text="Edit" />
+           </items>
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </MenuButton>
+         <ImageView fitHeight="17.0" fitWidth="22.0" layoutX="91.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #fe6900#fe6900;">
+            <image>
+               <Image url="@out.png" />
+            </image>
+            <cursor>
+               <Cursor fx:constant="DEFAULT" />
+            </cursor>
+         </ImageView>
+         <TextField fx:id="Name" layoutX="174.0" layoutY="45.0" prefHeight="33.0" prefWidth="243.0" promptText="Full Name" />
+         <Label fx:id="Createavolunteer" layoutX="174.0" layoutY="15.0" prefHeight="21.0" prefWidth="268.0" text="Create a volunteer">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="Address" layoutX="174.0" layoutY="91.0" prefHeight="33.0" prefWidth="242.0" promptText="Address" />
+         <TextField fx:id="Nationality" layoutX="174.0" layoutY="138.0" prefHeight="33.0" prefWidth="242.0" promptText="Nationality" />
+         <TextField fx:id="Email" layoutX="174.0" layoutY="183.0" prefHeight="33.0" prefWidth="241.0" promptText="Email" />
+         <Button fx:id="done" alignment="CENTER" layoutX="332.0" layoutY="231.0" mnemonicParsing="false" onMouseClicked="#Done" prefHeight="17.0" prefWidth="83.0" text="Done">
+            <font>
+               <Font name="Cambay Devanagari Regular" size="15.0" />
+            </font>
+         </Button>
+         <MenuButton alignment="CENTER" layoutX="1.0" layoutY="75.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="SHIFTS" textAlignment="CENTER" textFill="WHITE">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#createshift" text="Create" />
+               <MenuItem mnemonicParsing="false" onAction="#editshift" text="Edit" />
+            </items>
+            <font>
+               <Font name="Cambay Devanagari Regular" size="16.0" />
+            </font>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </MenuButton>
+      </children>
+   </AnchorPane>
+</Scene>
