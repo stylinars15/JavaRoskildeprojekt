@@ -154,6 +154,11 @@ public class HelloController
 
             Createavolunteer.setTextFill(Color.web("#008000"));
             Createavolunteer.setText("Volunteer saved");
+
+            Name.clear();
+            Address.clear();
+            Nationality.clear();
+            Email.clear();
         }
 
         else {
@@ -167,6 +172,11 @@ public class HelloController
                 createfunc(3,names, bw);
                 Createavolunteer.setTextFill(Color.web("#008000"));
                 Createavolunteer.setText("Volunteer saved");
+                Name.clear();
+                Address.clear();
+                Nationality.clear();
+                Email.clear();
+
             }
         } bw.close();
 

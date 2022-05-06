@@ -60,6 +60,5 @@ public class HelloApplication extends Application {
     public void volunteerseshifts() throws IOException {
         switchScene("/voluunteersevagter.fxml");
     }
-
-    //adme
+    
 }

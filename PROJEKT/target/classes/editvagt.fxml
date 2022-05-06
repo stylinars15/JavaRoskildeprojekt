@@ -38,7 +38,7 @@
                   <Font name="Cambay Devanagari Regular" size="25.0" />
               </font>
           </Text>
-         <MenuButton alignment="CENTER" layoutX="1.0" layoutY="43.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="VOLUNTTER" textAlignment="CENTER" textFill="WHITE">
+         <MenuButton alignment="CENTER" layoutX="1.0" layoutY="43.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="30.0" prefWidth="122.0" style="-fx-background-color: #fe6900#fe6900;" text="VOLUNTEER" textAlignment="CENTER" textFill="WHITE">
            <items>
              <MenuItem mnemonicParsing="false" onAction="#createvolunteer" text="Create" />
              <MenuItem mnemonicParsing="false" onAction="#editvolunteer" text="Edit" />
@@ -55,7 +55,7 @@
                <Image url="@out.png" />
             </image>
          </ImageView>
-         <TextField fx:id="Searchname" layoutX="174.0" layoutY="45.0" prefHeight="33.0" prefWidth="286.0" promptText="Name" />
+         <TextField fx:id="Searchname" layoutX="174.0" layoutY="45.0" prefHeight="33.0" prefWidth="286.0" promptText="Full Name" />
          <Label fx:id="editvollunteerlabel" layoutX="174.0" layoutY="15.0" prefHeight="22.0" prefWidth="310.0" text="Search volunteer">
             <font>
                <Font size="15.0" />
@@ -94,7 +94,7 @@
            </columns>
          </TableView>
          <Button layoutX="250.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#savevagt" prefHeight="26.0" prefWidth="100.0" text="Save changes" />
-         <Button layoutX="360.0" layoutY="337.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="100.0" text="Delete shift" textFill="RED" />
+         <Button layoutX="360.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#deletevagt" prefHeight="26.0" prefWidth="100.0" text="Delete shift" textFill="RED" />
       </children>
    </AnchorPane>
 </Scene>

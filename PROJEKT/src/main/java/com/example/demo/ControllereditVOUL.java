@@ -13,44 +13,44 @@ import java.util.ResourceBundle;
 
 public class ControllereditVOUL extends HelloController implements Initializable{
 
-    public TableView <Vager> Tableviewuse;
-    public TableColumn <Vager,String> Datebox;
-    public TableColumn <Vager,String> StandBox;
-    public TableColumn <Vager,String>ShiftBox;
+    public TableView <Vagter> Tableviewuse;
+    public TableColumn <Vagter,String> Datebox;
+    public TableColumn <Vagter,String> StandBox;
+    public TableColumn <Vagter,String>ShiftBox;
     public Label shiftsof;
     public TextField emailsevagter;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        Datebox.setCellValueFactory(new PropertyValueFactory<Vager,String>("datebox"));
+        Datebox.setCellValueFactory(new PropertyValueFactory<Vagter,String>("datebox"));
         Datebox.setCellFactory(TextFieldTableCell.forTableColumn());
-        Datebox.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Vager, String>>() {
+        Datebox.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Vagter, String>>() {
             @Override
-            public void handle(TableColumn.CellEditEvent <Vager, String> event) {
-                Vager vager = event.getRowValue();
-                vager.setDatebox(event.getNewValue());
+            public void handle(TableColumn.CellEditEvent <Vagter, String> event) {
+                Vagter vagter = event.getRowValue();
+                vagter.setDatebox(event.getNewValue());
             }
         });
 
 
-        StandBox.setCellValueFactory(new PropertyValueFactory<Vager, String>("standbox"));
+        StandBox.setCellValueFactory(new PropertyValueFactory<Vagter, String>("standbox"));
         StandBox.setCellFactory(TextFieldTableCell.forTableColumn());
-        StandBox.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Vager, String>>() {
+        StandBox.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Vagter, String>>() {
             @Override
-            public void handle(TableColumn.CellEditEvent <Vager, String> event) {
-                Vager vager = event.getRowValue();
-                vager.setStandbox(event.getNewValue());
+            public void handle(TableColumn.CellEditEvent <Vagter, String> event) {
+                Vagter vagter = event.getRowValue();
+                vagter.setStandbox(event.getNewValue());
             }
         });
 
-        ShiftBox.setCellValueFactory(new PropertyValueFactory<Vager,String>("shiftbox"));
+        ShiftBox.setCellValueFactory(new PropertyValueFactory<Vagter,String>("shiftbox"));
         ShiftBox.setCellFactory(TextFieldTableCell.forTableColumn());
-        ShiftBox.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Vager, String>>() {
+        ShiftBox.setOnEditCommit(new EventHandler<TableColumn.CellEditEvent<Vagter, String>>() {
             @Override
-            public void handle(TableColumn.CellEditEvent <Vager, String> event) {
-                Vager vager = event.getRowValue();
-                vager.setShiftbox(event.getNewValue());
+            public void handle(TableColumn.CellEditEvent <Vagter, String> event) {
+                Vagter vagter = event.getRowValue();
+                vagter.setShiftbox(event.getNewValue());
             }
         });
     }
@@ -69,15 +69,30 @@ public class ControllereditVOUL extends HelloController implements Initializable
 
     }
 
-    public void savevagt(MouseEvent mouseEvent) {
+    public void savevagt(MouseEvent mouseEvent) throws IOException {
+
+        File file = new File("voluntterdata.txt");
+        BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
+        PrintWriter pw = new PrintWriter(bw);
+
         int rowcount  =   Tableviewuse.getItems().size();
 
+        for (int i = 0; i <= 3; i++) {
+            bw.write(split[i] + ",");
+        }
+
        for (int i = 0; i < rowcount; i++ ){
-           Vager vager = Tableviewuse.getSelectionModel().getTableView().getItems().get(i);
-           System.out.println(vager.getDatebox()+vager.getShiftbox()+vager.getStandbox());
+           Vagter vagter = Tableviewuse.getSelectionModel().getTableView().getItems().get(i);
+           if (rowcount-1!=0){
+               bw.write(vagter.getDatebox()+","+ vagter.getStandbox()+","+ vagter.getShiftbox()+",");
+           }
+           else {
+               bw.write(vagter.getDatebox()+","+ vagter.getStandbox()+","+ vagter.getShiftbox());
+           }
        }
-
-
+        bw.close();
+        deletefunc();
+        Tableviewuse.getSortOrder().add(Datebox);
     }
 
     public void showvagtertabel() {
@@ -85,9 +100,10 @@ public class ControllereditVOUL extends HelloController implements Initializable
         Tableviewuse.getItems().clear();
 
             for (int i =4;i<split.length;i = i+3 ) {
-                Vager item = new Vager(split[i], split[i+1], split[i+2]);
+                Vagter item = new Vagter(split[i], split[i+1], split[i+2]);
                 Tableviewuse.getItems().add(item);
             }
+        Tableviewuse.getSortOrder().add(Datebox);
     }
 
     public void ShowShifts(MouseEvent mouseEvent) throws IOException {
@@ -117,5 +133,9 @@ public class ControllereditVOUL extends HelloController implements Initializable
             }
         }
         rd.close();
+    }
+
+    public void deletevagt(MouseEvent mouseEvent) {
+        Tableviewuse.getItems().removeAll(Tableviewuse.getSelectionModel().getSelectedItem());
     }
 }

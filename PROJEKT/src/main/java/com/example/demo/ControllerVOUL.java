@@ -52,6 +52,10 @@ public class ControllerVOUL extends HelloController {
 
                 Createavolunteer.setTextFill(Color.web("#008000"));
                 Createavolunteer.setText("Shift saved");
+
+                date.getEditor().clear();
+                task.clear();
+                shiftlength.clear();
             }
 
         }

@@ -49,7 +49,7 @@
            </columns>
          </TableView>
          <Button layoutX="380.0" layoutY="13.0" mnemonicParsing="false" onMouseClicked="#ShowShifts" prefHeight="26.0" prefWidth="92.0" text="Done" />
-         <Label fx:id="shiftsof" accessibleRole="BUTTON" layoutX="123.0" layoutY="38.0" prefHeight="20.0" prefWidth="159.0">
+         <Label fx:id="shiftsof" accessibleRole="BUTTON" layoutX="123.0" layoutY="39.0" prefHeight="20.0" prefWidth="365.0">
             <font>
                <Font name="Cambay Devanagari Regular" size="14.0" />
             </font>
